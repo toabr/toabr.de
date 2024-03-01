@@ -1,0 +1,40 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { getCollection } from 'astro:content';
+import { GET } from '../api/v1/tags.json'
+
+export async function getStaticPaths() {
+  let paths = []
+
+  // fetch tags list
+  let response = await GET(Astro)
+  const tagsList = await response.json()
+
+  for(let i = 0; i < tagsList.length; i++) {
+    const tag = tagsList[i]
+
+    // Filter out wiki entries by tag
+    const filteredCollection = await getCollection('wiki', ({ data }) => {
+      return data.tags?.includes(tag)
+    });
+
+    const path = {
+      params: { tag },
+      props: { 
+        tag,
+        filteredCollection,
+      },
+    }
+
+    paths = [...paths, path]
+  }
+
+  return paths
+}
+
+const {tag, filteredCollection} = Astro.props
+---
+<PageLayout>
+  <h1>{tag}</h1>
+  <ul>{filteredCollection.map(entry => <li><a href={`/wiki/${entry.slug}`}>{entry.data.title}</a></li>)}</ul>
+</PageLayout>
