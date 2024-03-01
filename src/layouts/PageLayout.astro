@@ -1,37 +1,10 @@
 ---
-// import 'github-markdown-css';
-import '../../node_modules/github-markdown-css/github-markdown-light.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style is:global>
-        .markdown-body {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 15px 45px 45px;
-        }
-
-        @media (max-width: 767px) {
-            .markdown-body {
-                padding: 15px;
-            }
-        }
-    </style>
-    <style>
-        header {
-            color: gray;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.5rem;
-        }
-    </style>
   </head>
   <body>
     <header class="d-flex justify-content-center m-5"> 
@@ -40,8 +13,8 @@ import '../../node_modules/github-markdown-css/github-markdown-light.css'
         <a href="/wiki" class="btn btn-outline-primary">Wiki</a>
       </nav>
     </header> 
-    <article>
+    <main class="container">
       <slot />
-    </article>
+    </main>
   </body>
 </html>
