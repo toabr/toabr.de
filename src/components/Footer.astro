@@ -1,0 +1,23 @@
+---
+import PageBrake from './PageBrake.astro'
+---
+<footer id="footer" class="container">
+
+  <PageBrake />
+
+  <section class="d-flex flex-wrap justify-content-center 
+  justify-content-sm-between flex-row-reverse align-items-center 
+  pb-3 mb-3">
+
+    <nav class="nav justify-content-end my-3">
+      <a href="/" class="nav-link link-secondary">Home</a>
+      <a href="/wiki" class="nav-link link-secondary">Wiki</a>
+      <a href="#contact" class="nav-link link-secondary">Contact</a>
+    </nav>
+
+    <div class="text-muted mb-0">
+      <i>&copy; {new Date().getFullYear()} <span class="text-secondary">toabr.de</span> , All Rights Reserved.</i>
+    </div>
+
+  </section>
+</footer>
