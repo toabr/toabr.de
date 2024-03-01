@@ -1,0 +1,15 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+const { frontmatter } = Astro.props
+---
+<PageLayout title={frontmatter.title}>
+    <h1>{frontmatter.title}</h1>
+    <article>
+        <slot />
+    </article>
+    <ul>
+    {frontmatter.tags && 
+        frontmatter.tags.map(tag => <li><a href={`/tags/${tag}`}>{tag}</a></li>)
+    }
+    </ul>
+</PageLayout>
