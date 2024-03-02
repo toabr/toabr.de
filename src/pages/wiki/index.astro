@@ -1,14 +1,24 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
-
-const files = await getCollection("wiki");
+import TagCloud from "../../components/TagCloud.astro"
+import PageBrake from './../../components/PageBrake.astro'
+const articles = await getCollection("wiki");
 ---
 <PageLayout>
-    <h2>Files:</h2>
-    {files &&
-        <ul>
-          {files.map(file => <li><a href={`${import.meta.env.BASE_URL}wiki/${file.slug}/`}>{file.slug}</a></li>)}
-        </ul>
-    }
+  <TagCloud/>
+  <PageBrake/>
+  {articles &&
+    <ul>
+      {articles.map(entry => <li><a href={`/wiki/${entry.slug}/`}>{entry.slug}</a></li>)}
+    </ul>
+  }
 </PageLayout>
+<style>
+  li {
+    list-style: none;
+  }
+  a {
+    color: black;
+  }
+</style>

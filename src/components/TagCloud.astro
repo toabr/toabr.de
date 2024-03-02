@@ -1,0 +1,10 @@
+---
+import { GET } from '../pages/api/v1/tags.json'
+
+// fetch tags list
+let response = await GET(Astro)
+const tagsList = await response.json()
+---
+<div class="d-flex flex-wrap gap-2 ">
+  {tagsList.map(entry => <a href={`/tags/${entry}`} class="btn btn-primary">{entry}</a>)}
+</div>
