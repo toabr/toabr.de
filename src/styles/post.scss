@@ -1,0 +1,124 @@
+$shrink: h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, main, footer;
+$width: 685px;
+
+[id^="Post"] {
+  // shrink content width
+  //
+  @each $item in $shrink {
+    .body > #{$item},
+    footer,
+    .shrink-content {
+      max-width: $width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // style base elements
+  //
+  h2 {
+    border-bottom: 1px solid var(--bs-accent-2);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+  hr {
+    color: #dee2e6;
+    opacity: 1;
+  }
+  p,
+  li {
+    font: 1rem var(--font-serif);
+    line-height: 1.65;
+  }
+  a {
+    text-decoration: none;
+    word-wrap: break-word;
+    word-break: break-word;
+    &:hover {
+      text-decoration: underline;
+    }
+    &[href^="http"]::after {
+      content: "";
+      position: absolute;
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-left: 0.35rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  code {
+    color: var(--bs-highlight);
+  }
+  pre {
+    position: relative;
+    background: var(--bs-dark);
+    color: var(--bs-light);
+    padding: 1rem;
+    border-left: 5px solid var(--bs-highlight);
+
+    &.term {
+      padding-top: 2rem;
+      border: none;
+      &::before {
+        content: "terminal";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.3rem 0 0.1rem 1rem;
+        color: var(--bs-white);
+        background: var(--bs-primary);
+        font-size: smaller;
+        font-weight: 700;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0.8rem;
+        right: 0.5rem;
+        width: 13px;
+        height: 3px;
+        background: var(--bs-white);
+      }
+    }
+  }
+  blockquote {
+    padding: 1.25em 1.5em;
+    background: rgba(var(--bs-accent-1-rgb), 0.35);
+    // border-left: 3px solid var(--bs-highlight);
+    font-size: 1.08rem;
+  }
+  kbd {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.875em;
+    color: #fff;
+    background-color: #212529;
+  }
+  abbr {
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 0.135rem;
+    font-weight: bolder;
+    &:hover {
+      cursor: help;
+    }
+  }
+  em {
+    font-style: italic;
+    font-weight: bolder;
+  }
+  small {
+    font-weight: 200;
+  }
+
+  // images
+  //
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 18rem;
+  }
+}
