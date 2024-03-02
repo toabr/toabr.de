@@ -2,6 +2,7 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import { getCollection } from 'astro:content';
 import { GET } from '../api/v1/tags.json'
+import PageBrake from './../../components/PageBrake.astro'
 
 export async function getStaticPaths() {
   let paths = []
@@ -35,6 +36,7 @@ export async function getStaticPaths() {
 const {tag, filteredCollection} = Astro.props
 ---
 <PageLayout>
+  <PageBrake/>
   <h1>{tag}</h1>
   <ul>{filteredCollection.map(entry => <li><a href={`/wiki/${entry.slug}`}>{entry.data.title}</a></li>)}</ul>
 </PageLayout>
