@@ -35,8 +35,7 @@ export async function getStaticPaths() {
 
 const {tag, filteredCollection} = Astro.props
 ---
-<PageLayout>
+<PageLayout title={tag}>
   <PageBrake/>
-  <h1>{tag}</h1>
   <ul>{filteredCollection.map(entry => <li><a href={`/wiki/${entry.slug}`}>{entry.data.title}</a></li>)}</ul>
 </PageLayout>

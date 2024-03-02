@@ -5,7 +5,7 @@ import TagCloud from "../../components/TagCloud.astro"
 import PageBrake from './../../components/PageBrake.astro'
 const articles = await getCollection("wiki");
 ---
-<PageLayout>
+<PageLayout title="Snippets Wiki" desc="Browse a bunch of code snippets by tag.">
   <TagCloud/>
   <PageBrake/>
   {articles &&

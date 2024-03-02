@@ -2,9 +2,11 @@
 import Footer from '../components/Footer.astro'
 import About from '../components/About.astro'
 import '../styles/index.scss'
+const { title, desc } = Astro.props;
 ---
 <html lang="en">
   <head>
+    <title>{title}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>

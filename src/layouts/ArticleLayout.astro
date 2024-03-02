@@ -1,9 +1,10 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import PageBrake from '../components/PageBrake.astro'
 const { frontmatter } = Astro.props
 ---
 <PageLayout title={frontmatter.title}>
-  <h1 class="text-center mt-3 mb-4">{frontmatter.title}</h1>
+  <PageBrake/>
   <article id="Post">
     <div class="body">
       <slot />
