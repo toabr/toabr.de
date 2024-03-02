@@ -10,18 +10,26 @@ const { title, desc } = Astro.props;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
-    <div id="page">
-      <header class="d-flex justify-content-center m-5"> 
-        <nav class="btn-group text-center">
-          <a href="/" class="btn btn-primary">Home</a>
-          <a href="/wiki" class="btn btn-outline-primary">Wiki</a>
-        </nav>
-      </header> 
-      <main class="container">
-        <slot />
-      </main>
-      <Footer/>
+  <body open="false">
+    <div id="root">
+      <div id="page" class="min-vh-100 overflow-hidden d-flex flex-column">
+        <header class="container-small"> 
+          <nav class="btn-group text-center my-5">
+            <a href="/" class="btn btn-primary">Home</a>
+            <a href="/wiki" class="btn btn-outline-primary">Wiki</a>
+          </nav>
+          <div class="text-center mt-3 mb-4 undefined">
+            <h1 class="">{title}</h1>
+            <p class="lead text-capitalize">{desc}</p>
+          </div>
+        </header> 
+        <main class="container">
+          <div class="container-small">
+            <slot/>
+          </div>
+        </main>
+        <Footer/>
+      </div>
     </div>
     <div id="about" class="about">
       <About/>

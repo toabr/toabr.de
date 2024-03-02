@@ -1,8 +1,9 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
 import { getCollection } from 'astro:content';
 import { GET } from '../api/v1/tags.json'
+import PageLayout from "../../layouts/PageLayout.astro";
 import PageBrake from './../../components/PageBrake.astro'
+import TitlesList from './../../components/TitlesList.astro'
 
 export async function getStaticPaths() {
   let paths = []
@@ -37,5 +38,5 @@ const {tag, filteredCollection} = Astro.props
 ---
 <PageLayout title={tag}>
   <PageBrake/>
-  <ul>{filteredCollection.map(entry => <li><a href={`/wiki/${entry.slug}`}>{entry.data.title}</a></li>)}</ul>
+  <TitlesList articles={filteredCollection} />
 </PageLayout>

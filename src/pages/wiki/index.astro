@@ -3,22 +3,13 @@ import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 import TagCloud from "../../components/TagCloud.astro"
 import PageBrake from './../../components/PageBrake.astro'
+import TitlesList from './../../components/TitlesList.astro'
 const articles = await getCollection("wiki");
 ---
 <PageLayout title="Snippets Wiki" desc="Browse a bunch of code snippets by tag.">
   <TagCloud/>
   <PageBrake/>
   {articles &&
-    <ul>
-      {articles.map(entry => <li><a href={`/wiki/${entry.slug}/`}>{entry.slug}</a></li>)}
-    </ul>
+    <TitlesList {articles} />
   }
 </PageLayout>
-<style>
-  li {
-    list-style: none;
-  }
-  a {
-    color: black;
-  }
-</style>

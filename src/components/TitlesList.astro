@@ -1,0 +1,60 @@
+---
+const { articles } = Astro.props
+---
+<div class="title-list">
+  <div class="text-start list-group list-group-flush">
+    {articles.map(entry => <a href={`/wiki/${entry.slug}/`}
+      class="text-body bg-body fw-bolder shadow pe-2 list-group-item list-group-item-action">
+      <div class="d-sm-flex justify-content-between flex-wrap align-items-center mt-1">
+        <small class="date d-sm-block pe-2 text-muted fw-light">10/16/2022</small>
+        <div class="title flex-fill">{entry.slug}</div>
+        <div class="tags text-highlight">
+          <small class="tag bg-accent-2 fw-lighter ms-1 p-1 rounded-pill" style="font-size: 0.75rem;">#nodejs</small>
+          <small class="tag bg-accent-2 fw-lighter ms-1 p-1 rounded-pill" style="font-size: 0.75rem;">#npm</small>
+        </div>
+      </div>
+    </a>)}
+  </div>
+</div>
+<style>
+  .title-list {
+    .list-group-item {
+      &:hover {
+        border-top-color: var(--bs-primary);
+        box-shadow: 0 5px 18px -5px var(--bs-secondary),
+          0 0 5px -3px var(--bs-primary) !important;
+        background: var(--bs-primary) !important;
+        background-image: var(--bs-gradient);
+        color: white;
+        .title {
+          color: var(--bs-white) !important;
+        }
+        .date {
+          color: var(--bs-light) !important;
+        }
+      }
+      &.disabled,
+      &:disabled {
+        color: var(--bs-accent-3) !important;
+        pointer-events: none;
+        background-color: var(--bs-accent-2) !important;
+        .title {
+          color: var(--bs-accent-3) !important;
+        }
+      }
+    }
+  }
+
+  html[darkmode] {
+    .title-list {
+      .list-group-item {
+        .title {
+          color: var(--bs-primary);
+        }
+        .tag {
+          background: var(--bs-accent-1) !important;
+        }
+      }
+    }
+  }
+</style>
