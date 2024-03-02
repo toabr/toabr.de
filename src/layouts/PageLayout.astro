@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro'
 import About from '../components/About.astro'
+import Hero from '../components/Hero.astro'
 import '../styles/index.scss'
 const { title, desc } = Astro.props;
 ---
@@ -14,6 +15,7 @@ const { title, desc } = Astro.props;
     <div id="root">
       <div id="page" class="min-vh-100 overflow-hidden d-flex flex-column">
         <header class="container-small"> 
+          <Hero/>
           <nav class="btn-group text-center my-5">
             <a href="/" class="btn btn-primary">Home</a>
             <a href="/wiki" class="btn btn-outline-primary">Wiki</a>
