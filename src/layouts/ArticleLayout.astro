@@ -3,13 +3,17 @@ import PageLayout from "../layouts/PageLayout.astro";
 const { frontmatter } = Astro.props
 ---
 <PageLayout title={frontmatter.title}>
-    <h1>{frontmatter.title}</h1>
-    <article>
-        <slot />
-    </article>
-    <ul>
-    {frontmatter.tags && 
-        frontmatter.tags.map(tag => <li><a href={`/tags/${tag}`}>{tag}</a></li>)
-    }
-    </ul>
+  <h1 class="text-center mt-3 mb-4">{frontmatter.title}</h1>
+  <article id="Post">
+    <div class="body">
+      <slot />
+    </div>
+    <footer class="footer">
+      {frontmatter.tags && 
+        frontmatter.tags.map(tag => <a href={`/tags/${tag}`}>
+          <button type="button" class="text-capitalize me-2 mb-2 btn btn-primary">{tag}</button>
+        </a>)
+      }
+    </footer>
+  </article>
 </PageLayout>
