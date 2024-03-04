@@ -7,9 +7,11 @@ import TitlesList from './../../components/TitlesList.astro'
 const articles = await getCollection("wiki");
 ---
 <PageLayout title="Snippets Wiki" desc="Browse a bunch of code snippets by tag.">
-  <TagCloud/>
-  <PageBrake/>
-  {articles &&
-    <TitlesList {articles} />
-  }
+  <div class="container-small">
+    <TagCloud/>
+    <PageBrake/>
+    {articles &&
+      <TitlesList {articles} />
+    }
+  </div>
 </PageLayout>

@@ -27,10 +27,15 @@
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/helpers";
 
-// ./../node_modules/bootstrap/scss/bootstrap.scss
+// ../../node_modules/bootstrap/scss/bootstrap.scss
 @import "bootstrap/scss/buttons";
+@import "bootstrap/scss/button-group";
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/forms";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+// @import "bootstrap/scss/card";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "bootstrap/scss/utilities/api";
@@ -38,4 +43,5 @@
 // 8. Add additional custom code here
 @import "./custom.scss";
 @import "./post.scss";
+@import "./blog-grid.scss";
 
