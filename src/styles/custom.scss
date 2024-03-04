@@ -56,11 +56,36 @@ body {
  *   About Section 
  * =====================================*/
 
+body {
+  background-image: url("/kendal-hnysCJrPpkc-unsplash_sm.webp");
+}
+
+body[open] {
+  overflow: hidden;
+}
+
 $about-width: 350px;
 
 #page {
-  background: rgba(var(--bs-body-bg-rgb), 91%);
+  background: rgba(var(--bs-body-bg-rgb), 85%);
   transition: transform 0.3s ease-out;
+}
+
+body[open] #page {
+  width: 100%;
+  transform: translate($about-width, 58px);
+  position: fixed;
+  opacity: 0.8;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(var(--bs-body-bg-rgb), 35%);
+    background-image: url(/overlay_02.png);
+    z-index: 1100;
+  }
 }
 
 #about {
@@ -69,12 +94,24 @@ $about-width: 350px;
   left: 0;
   width: $about-width;
   height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
   // font-size: 2vh;
-
   .title {
     font-size: 2em;
-  }
+    div {
+      transform: translateX(-25px);
+      transition: all 1.8s ease-out;
 
+      &:nth-child(2) {
+        transform: translateX(-35px);
+      }
+      &:nth-child(3) {
+        transform: translateX(-45px);
+      }
+    }
+  }
   .description {
     dd {
       margin-top: 0.8125rem;
@@ -88,75 +125,24 @@ $about-width: 350px;
   }
 }
 
-body[open] {
-  background-image: url("/kendal-hnysCJrPpkc-unsplash_sm.webp");
-}
-
-body[open] .about {
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-  // left: -$about-width;
+body[open] #about {
+  // left: 0;
+  // z-index: 1;
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
 
   .title {
-    div {
-      transform: translateX(-25px);
-      transition: all 1.8s ease-out;
-
-      &:nth-child(2) {
-        transform: translateX(-35px);
-      }
-      &:nth-child(3) {
-        transform: translateX(-45px);
-      }
+    div:nth-child(1),
+    div:nth-child(2),
+    div:nth-child(3) {
+      transform: translateX(0);
     }
   }
 }
-
-html.no-js,
-body[open="true"] {
-  overflow: hidden;
-
-  .about {
-    // left: 0;
-    // z-index: 1;
-    opacity: 1;
-    transition: opacity 1.5s ease-out;
-
-    .title {
-      div:nth-child(1),
-      div:nth-child(2),
-      div:nth-child(3) {
-        transform: translateX(0);
-      }
-    }
-  }
-}
-
-[open="true"] {
-  #page {
-    width: 100%;
-    transform: translate($about-width, 58px);
-    position: fixed;
-    opacity: 0.8;
-
-    &::before {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(var(--bs-body-bg-rgb), 35%);
-      background-image: url(../img/overlay_02.png);
-      z-index: 1100;
-    }
-  }
-}
-
 
 /* ======================================
  *   Styles Section 
  * =====================================*/
-
 
 .font-serif {
   font-family: var(--font-serif);
