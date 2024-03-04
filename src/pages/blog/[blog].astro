@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from "../../layouts/PageLayout.astro";
+import PageBrake from './../../components/PageBrake.astro'
+
+export async function getStaticPaths() {
+  const entries = await getCollection("blog");
+
+  return entries.map((entry) => ({
+    params: { blog: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<PageLayout title={entry.data.title}>
+  <div class="container-small">
+    <PageBrake/>
+    <Content/>
+  </div>
+</PageLayout>

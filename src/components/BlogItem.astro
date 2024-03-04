@@ -4,7 +4,7 @@ const { Content } = await entry.render();
 ---
 <article class="border-0 shadow-slim hover-drop card bg-accent-1">
   <div class="card__image bg-primary bg-gradient p-3">
-    <a class="h-100 d-flex justify-content-center align-items-center" href={entry.slug}>
+    <a class="h-100 d-flex justify-content-center align-items-center" href={`/blog/${entry.slug}`}>
       <img loading="lazy" class="img-fluid shadow-slim" alt={entry.data.title} src={entry.data.heroImage} style="max-height: 100%;">
     </a>
   </div>
