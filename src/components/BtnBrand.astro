@@ -1,0 +1,6 @@
+---
+const { href, title, variant } = Astro.props
+---
+<a href={href} class={`text-capitalizefont-monospace flex-fill btn btn-primary btn-${variant ? variant : "sm"}`}>
+  {title}
+</a>
