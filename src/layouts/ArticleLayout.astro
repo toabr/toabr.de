@@ -4,17 +4,22 @@ import PageBrake from '../components/PageBrake.astro'
 const { frontmatter } = Astro.props
 ---
 <PageLayout title={frontmatter.title}>
-  <PageBrake/>
-  <article id="Post">
-    <div class="body">
-      <slot />
+  <div class="container-small">
+    <PageBrake/>
+    <div class="date text-center text-muted my-3">
+      <time>{frontmatter.changed.toString().slice(0,15)}</time>
     </div>
-    <footer class="footer">
-      {frontmatter.tags && 
-        frontmatter.tags.map(tag => <a href={`/tags/${tag}`}>
-          <button type="button" class="text-capitalize me-2 mb-2 btn btn-primary">{tag}</button>
-        </a>)
-      }
-    </footer>
-  </article>
+    <article id="Post">
+      <div class="body">
+        <slot />
+      </div>
+      <footer class="footer">
+        {frontmatter.tags && 
+          frontmatter.tags.map(tag => <a href={`/tags/${tag}`}>
+            <button type="button" class="text-capitalize me-2 mb-2 btn btn-primary">{tag}</button>
+          </a>)
+        }
+      </footer>
+    </article>
+  </div>
 </PageLayout>
