@@ -1,3 +1,41 @@
 <div id="theme-switch" class="form-switch">
   <input class="form-check form-check-input rounded-pill" type="checkbox">
 </div>
+<script is:inline>
+  const themeSwitch = document.querySelector('#theme-switch input')
+  let theme = getThemeMode()
+  setThemeMode(theme)
+
+  function setThemeMode(mode) {
+    document.documentElement.dataset.bsTheme = mode
+    localStorage.setItem('theme', mode)
+    if(mode === 'dark') {
+      themeSwitch.setAttribute('checked', '')
+    } else {
+      themeSwitch.removeAttribute('checked')
+    }
+  }
+
+  function getThemeMode() {
+    // test for localStorage key
+    if(localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    // respect system preference
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }else if(window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light'
+    }
+    // my preference
+    return 'dark'
+  }
+
+  // change event
+  const handleChange = (e) => {
+    const mode = e.target.checked ? 'dark' : 'light'
+    setThemeMode(mode)
+  }
+
+  themeSwitch.addEventListener('change', handleChange)
+</script>
