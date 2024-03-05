@@ -4,6 +4,7 @@ import AboutSection from '../components/AboutSection.astro'
 import Hero from '../components/Hero.astro'
 import AboutBtn from '../components/AboutBtn.astro'
 import ThemeSwitch from '../components/ThemeSwitch.astro'
+import Symbols from '../components/Symbols.astro'
 import '../styles/index.scss'
 const { title, desc } = Astro.props;
 ---
@@ -14,6 +15,7 @@ const { title, desc } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <Symbols/>
     <div id="page" class="min-vh-100 overflow-hidden d-flex flex-column">
       <header class="container-fluid text-center"> 
         <div class="d-flex justify-content-between align-items-center pt-2">

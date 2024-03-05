@@ -1,6 +1,21 @@
 ---
-const { href, title, variant } = Astro.props
+const { href, title, variant, icon } = Astro.props
 ---
 <a href={href} class={`text-capitalizefont-monospace flex-fill btn btn-primary btn-${variant ? variant : "sm"}`}>
+  {icon && <span class="me-1">
+    <svg class="svg-inline" aria-hidden="true">
+      <use href={`#icon-${icon}`}></use>
+    </svg>
+  </span>}
   {title}
 </a>
+<style>
+.svg-inline {
+    font-size: inherit;
+    height: 1.2em;
+    width: 1.2rem;
+    vertical-align: -.25em;
+    display: inline-block;
+    overflow: visible;
+}
+</style>
