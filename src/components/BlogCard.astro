@@ -1,0 +1,30 @@
+---
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<article class="card border-0 shadow-slim hover-drop">
+  <div class="card__image bg-primary bg-gradient p-3">
+    <a class="h-100 d-flex justify-content-center align-items-center" href={`/blog/${entry.slug}`}>
+      <img loading="lazy" class="img-fluid shadow-slim" alt={entry.data.title} src={entry.data.heroImage} style="max-height: 100%;">
+    </a>
+  </div>
+  <div class="card__body px-3 pt-2">
+    <div class="d-flex justify-content-start position-relative">
+      {entry.data.tags.map(tag => <small class="text-primary fw-bolder mx-1">{`#${tag}`}</small>)}
+    </div>
+    <small class="text-muted card-subtitle">{entry.data.pubDate}</small>
+    <div class="fw-bold card-title h5 mt-3">
+      <a class="text-body text-decoration-none" href={entry.slug}>{entry.data.title}</a>
+    </div>
+    <p class="description fs-6 py-1 mb-3 card-text">{entry.data.description}</p>
+    <div class="text-end"></div>
+  </div>
+</article>
+<style>
+  article {
+    background: var(--bs-secondary-bg);
+  }
+  .description {
+    font-family: serif;
+  }
+</style>

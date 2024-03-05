@@ -1,6 +1,6 @@
 ---
 import Footer from '../components/Footer.astro'
-import About from '../components/About.astro'
+import AboutSection from '../components/AboutSection.astro'
 import Hero from '../components/Hero.astro'
 import AboutBtn from '../components/AboutBtn.astro'
 import ThemeSwitch from '../components/ThemeSwitch.astro'
@@ -15,20 +15,20 @@ const { title, desc } = Astro.props;
   </head>
   <body>
     <div id="page" class="min-vh-100 overflow-hidden d-flex flex-column">
-      <div class="d-flex justify-content-between align-items-center pt-2">
-        <AboutBtn />
-        <ThemeSwitch />
-      </div>
-      <header class="text-center"> 
+      <header class="container-fluid text-center"> 
+        <div class="d-flex justify-content-between align-items-center pt-2">
+          <AboutBtn />
+          <ThemeSwitch />
+        </div>
         <Hero/>
-        <nav class="btn-group my-5">
+        <nav class="btn-group mt-5 mb-4">
           <a href="/" class="btn btn-primary px-4 btn-sm">Home</a>
           <a href="/wiki" class="btn btn-outline-primary px-4 btn-sm">Wiki</a>
         </nav>
-        <div class="text-center mt-3 mb-4 undefined">
-          <h1 class="">{title}</h1>
-          <p class="lead text-capitalize">{desc}</p>
-        </div>
+        <div class="text-center mt-3 undefined">
+          {title && <h1>{title}</h1>}
+          {!title && <h1 class="braces"><span>to</span>abr.de</h1>}
+          {desc && <p class="lead text-capitalize">{desc}</p>} </div>
       </header> 
       <main class="container" style="max-width: 1040px;">
         <slot/>
@@ -36,7 +36,7 @@ const { title, desc } = Astro.props;
       <Footer/>
     </div>
     <div id="about" class="about">
-      <About/>
+      <AboutSection/>
     </div>
   </body>
 </html>

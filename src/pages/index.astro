@@ -1,17 +1,17 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../layouts/PageLayout.astro";
-import BtnBrand from '../components/BtnBrand.astro'
+import BrandBtn from '../components/BrandBtn.astro'
 import PageBrake from '../components/PageBrake.astro'
-import BlogItem from '../components/BlogItem.astro'
+import BlogItem from '../components/BlogCard.astro'
 
 const skillz = ["Linux","Shell","Git","Docker","Drupal","React","Javascript","Html","Css"]
 const entries = await getCollection("blog");
 ---
-<PageLayout title="toabr.de" desc="Browse a bunch of code snippets I've snaged over time.">
+<PageLayout desc="Browse a bunch of code snippets I've snaged over time.">
   <section class="container-small">
-    <div class="d-flex flex-wrap gap-2 ">
-      {skillz.map(entry => <BtnBrand href={`/tags/${entry}`} title={entry} variant="xl px-4" />)}
+    <div class="d-flex flex-wrap gap-2 mt-3">
+      {skillz.map(entry => <BrandBtn href={`/tags/${entry}`} title={entry} variant="sm px-4" />)}
     </div>
   </section>
   <PageBrake/>

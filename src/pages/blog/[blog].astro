@@ -15,9 +15,20 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<PageLayout title={entry.data.title}>
+<PageLayout title={entry.data.title} desc={entry.data.description}>
   <div class="container-small">
+    <!-- <div class="image"><img src={entry.data.heroImage}/></div> -->
     <PageBrake/>
-    <Content/>
   </div>
+    <article id="Post">
+      <Content/>
+      <!-- <div class="field_images d-flex flex-wrap justify-content-center gap-3 mt-5"> -->
+      <!--   <div class="image"><img src={entry.data.heroImage}/></div> -->
+      <!-- </div> -->
+    </article>
 </PageLayout>
+<style>
+  .codepen {
+      margin-bottom: 3rem;
+  }
+</style>

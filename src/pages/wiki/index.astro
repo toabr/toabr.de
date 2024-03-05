@@ -8,7 +8,7 @@ const articles = await getCollection("wiki");
 ---
 <PageLayout title="Snippets Wiki" desc="Browse a bunch of code snippets by tag.">
   <div class="container-small">
-    <TagCloud/>
+    <div class="mt-3"><TagCloud/></div>
     <PageBrake/>
     {articles &&
       <TitlesList {articles} />

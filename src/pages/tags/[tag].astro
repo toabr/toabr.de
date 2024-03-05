@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 
 const {tag, filteredCollection} = Astro.props
 ---
-<PageLayout title={tag}>
+<PageLayout title={`#${tag}`}>
   <div class="container-small">
     <PageBrake/>
     <TitlesList articles={filteredCollection} />
