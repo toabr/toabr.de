@@ -10,9 +10,31 @@ const { title, desc } = Astro.props;
 ---
 <html lang="en">
   <head>
-    <title>{title}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title ? `${title}` : `toabr.de`}</title>
+    <meta name="description" content="personal portfolio" />
+    <meta name="theme-color" content="#20c997" />
+    <meta name="author" content="Torsten Abraham" />
+    <meta name="keywords" content="webdevelopment, freelancer, frontend, berlin, drupal" />
+
+    <link rel="shortcut icon" href="/logo192.png" />
+    <link rel="canonical" href="https://toabr.de/">
+    <!-- <link rel="manifest" href="./site.webmanifest" /> -->
+    <link rel="apple-touch-icon" href="/logo192.png" />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="toabr.de" />
+    <meta property="og:description" content="personal portfolio" />
+    <meta property="og:image" content="/logo192.png" />
+    <meta property="og:url" content="https://toabr.de/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- preloads -->
+    <link rel="preload" as="image" href="/hero.webp">
+    <link rel="preload" as="image" href="/kendal-hnysCJrPpkc-unsplash_sm.webp">
+    <!-- <link rel="preload" as="font" href="/fonts/" type="font/ttf" crossorigin /> -->
   </head>
   <body>
     <Symbols/>

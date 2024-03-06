@@ -11,7 +11,7 @@ const entries = await getCollection("blog");
 <PageLayout desc="Browse a bunch of code snippets I've snaged over time.">
   <section class="container-small">
     <div class="d-flex flex-wrap gap-2 mt-3">
-      {skillz.map(entry => <BrandBtn href={`/tags/${entry.toLowerCase()}`} title={entry} variant="sm px-4" icon={entry.toLowerCase()} />)}
+      {skillz.map(entry => <BrandBtn href={`/tags/${entry.toLowerCase()}`} title={entry} variant="sm px-3" icon={entry.toLowerCase()} />)}
     </div>
   </section>
   <PageBrake/>

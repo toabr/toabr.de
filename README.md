@@ -3,6 +3,10 @@
 </div>
 
 ##### TODO:
-- make subfolders work
-- integrate `frontmatter`
-- add a theme switch button
+- change frontpage articles to list items
+- preload font / find out whats actually used
+- test meata header tags
+- sort wiki tags
+- sort blog entries
+- more blog entries
+- (searchbar)
