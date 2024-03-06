@@ -1,5 +1,15 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -125,7 +135,51 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"wiki": {
+		"blog": {
+"css-punch-out-grid.mdx": {
+	id: "css-punch-out-grid.mdx";
+  slug: "css-punch-out-grid";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
+"glaze-of-nostalgy.mdx": {
+	id: "glaze-of-nostalgy.mdx";
+  slug: "glaze-of-nostalgy";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
+"haunted-css.mdx": {
+	id: "haunted-css.mdx";
+  slug: "haunted-css";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
+"logo-reveal-animation.mdx": {
+	id: "logo-reveal-animation.mdx";
+  slug: "logo-reveal-animation";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
+"not-so-boring-window-stats.mdx": {
+	id: "not-so-boring-window-stats.mdx";
+  slug: "not-so-boring-window-stats";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
+"one-single-div.mdx": {
+	id: "one-single-div.mdx";
+  slug: "one-single-div";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
+};
+"wiki": {
 "netrw-vims-builtin-file-explorer.md": {
 	id: "netrw-vims-builtin-file-explorer.md";
   slug: "netrw-vims-builtin-file-explorer";
@@ -152,9 +206,7 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"blog": {
-};
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
