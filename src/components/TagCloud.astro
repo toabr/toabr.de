@@ -5,7 +5,15 @@ import BrandBtn from '../components/BrandBtn.astro'
 // fetch tags list
 let response = await GET(Astro)
 const tagsList = await response.json()
+const { activeTag } = Astro.props
 ---
+
 <div class="d-flex flex-wrap gap-2">
-  {tagsList.map(entry => <BrandBtn href={`/tags/${entry}`} title={entry} variant={} />)}
+  {tagsList.map(entry => {
+    const active = entry === activeTag ? "active" : ''
+    return <BrandBtn
+      href={`/tags/${entry.toLowerCase()}`}
+      title={entry}
+      class={`${active} btn-sm flex-fill`} />
+  })}
 </div>

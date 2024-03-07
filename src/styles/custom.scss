@@ -121,8 +121,29 @@ body[open] #about {
 }
 
 /* ======================================
- *   Styles Section 
+ *   Brand Button
+ *  ./node_modules/bootstrap/scss/_buttons.scss
  * =====================================*/
+
+.btn-brand {
+  transform: skew(-18deg, 0);
+  & > span {
+    display: inline-block;
+    transform: skew(18deg, 0);
+  }
+}
+
+[data-bs-theme="light"] .btn-brand {
+  @extend .btn-primary;
+  --bs-btn-font-weight: 600;
+}
+
+[data-bs-theme="dark"] .btn-brand {
+  @extend .btn-outline-primary;
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-hover-color: var(--bs-body-bg);
+  --bs-btn-active-color: var(--bs-body-bg);
+}
 
 .container-small {
   max-width: 685px;
