@@ -39,6 +39,8 @@ const {tag, filteredCollection} = Astro.props
 <PageLayout title={`#${tag}`}>
   <div class="container-small">
     <PageBrake/>
-    <TitlesList articles={filteredCollection} />
+    <div class="d-flex justify-content-center">
+      <TitlesList articles={filteredCollection} />
+    </div>
   </div>
 </PageLayout>
