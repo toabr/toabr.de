@@ -3,7 +3,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://toabr.github.io',
+  site: 'https://toabr.de',
   // base: process.env.NODE_ENV === 'production' ? '/wiki/' : '/',
   output: 'static',
   integrations: [mdx()]

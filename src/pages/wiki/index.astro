@@ -2,12 +2,13 @@
 import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 import TagCloud from "../../components/TagCloud.astro"
-import PageBrake from './../../components/PageBrake.astro'
-import TitlesList from './../../components/TitlesList.astro'
+import PageBrake from '../../components/PageBrake.astro'
+import TitlesList from '../../components/TitlesList.astro'
+import { WIKI_DESCRIPTION } from '../../consts';
+
 const articles = await getCollection("wiki");
-const description = "Snippets, Configurations, Commands, Prompts, Hacks & Secrets"
 ---
-<PageLayout title="🎱 Knowledge Base" {description}>
+<PageLayout title="🎱 Knowledge Base" description={WIKI_DESCRIPTION}>
   <div class="container-small">
     <div class="mt-5"><TagCloud/></div>
     <PageBrake/>
