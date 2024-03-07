@@ -3,8 +3,8 @@
 </div>
 
 ##### TODO:
-- open graph images in blog articles
 - .htaccess settings for external scripts
+- different background contrasts
 - change tags to topics?
 - change frontpage articles to list items
 - preload font / find out whats actually used

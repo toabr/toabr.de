@@ -1,16 +1,21 @@
 // variable overrides in:
 // ../../node_modules/bootstrap/scss/_variables.scss
 
+/* latin */
 @font-face {
-  font-family: "Comfortaa";
+  font-family: 'Red Hat Display';
   font-style: normal;
-  font-weight: 300 700;
-  src: local("Comfortaa"),
-    url("/fonts/Comfortaa-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 900;
   font-display: swap;
+  src: url(/fonts/8vIQ7wUr0m80wwYf0QCXZzYzUoTg_T6h.woff2) format('woff2');
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Play:wght@400;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(/fonts/8vIS7wUr0m80wwYf0QCXZzYzUoTg-A6jTY8.woff2) format('woff2');
+}
 
 // Typography
 $font-family-sans-serif:  'Red Hat Display', sans-serif;
