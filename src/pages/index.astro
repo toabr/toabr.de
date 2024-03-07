@@ -4,13 +4,14 @@ import PageLayout from "../layouts/PageLayout.astro";
 import BrandBtn from '../components/BrandBtn.astro'
 import PageBrake from '../components/PageBrake.astro'
 import BlogItem from '../components/BlogCard.astro'
+import { SITE_DESCRIPTION } from '../consts';
 
 const skillz = ["Linux","Shell","Git","Docker","Drupal","React","Javascript","Html","Css"]
 const entries = await getCollection("blog");
 ---
-<PageLayout desc="Browse a bunch of code snippets I've snaged over time.">
+<PageLayout description={SITE_DESCRIPTION}>
   <section class="container-small">
-    <div class="d-flex flex-wrap gap-2 mt-3">
+    <div class="d-flex flex-wrap gap-2 mt-5">
       {skillz.map(entry => <BrandBtn href={`/tags/${entry.toLowerCase()}`} title={entry} variant="sm px-3" icon={entry.toLowerCase()} />)}
     </div>
   </section>

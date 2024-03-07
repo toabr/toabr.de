@@ -1,41 +1,19 @@
 ---
-import Footer from '../components/Footer.astro'
+import BaseHead from '../components/BaseHead.astro'
+import HeaderLink from '../components/HeaderLink.astro'
 import AboutSection from '../components/AboutSection.astro'
 import Hero from '../components/Hero.astro'
 import AboutBtn from '../components/AboutBtn.astro'
 import ThemeSwitch from '../components/ThemeSwitch.astro'
 import Symbols from '../components/Symbols.astro'
-import HeaderLink from '../components/HeaderLink.astro'
-import '../styles/index.scss'
-const { title, desc } = Astro.props;
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const { title, description } = Astro.props;
 ---
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{title ? `${title}` : `toabr.de`}</title>
-    <meta name="description" content="personal portfolio" />
-    <meta name="theme-color" content="#20c997" />
-    <meta name="author" content="Torsten Abraham" />
-    <meta name="keywords" content="webdevelopment, freelancer, frontend, berlin, drupal" />
-
-    <link rel="shortcut icon" href="/logo192.png" />
-    <link rel="canonical" href="https://toabr.de/">
-    <!-- <link rel="manifest" href="./site.webmanifest" /> -->
-    <link rel="apple-touch-icon" href="/logo192.png" />
-
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content="toabr.de" />
-    <meta property="og:description" content="personal portfolio" />
-    <meta property="og:image" content="/logo192.png" />
-    <meta property="og:url" content="https://toabr.de/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- preloads -->
-    <link rel="preload" as="image" href="/hero.webp">
-    <link rel="preload" as="image" href="/kendal-hnysCJrPpkc-unsplash_sm.webp">
-    <!-- <link rel="preload" as="font" href="/fonts/" type="font/ttf" crossorigin /> -->
+    <BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
   </head>
   <body>
     <Symbols/>
@@ -53,7 +31,8 @@ const { title, desc } = Astro.props;
         <div class="text-center mt-3 undefined">
           {title && <h1>{title}</h1>}
           {!title && <h1 class="braces"><span>to</span>abr.de</h1>}
-          {desc && <p class="lead text-capitalize">{desc}</p>} </div>
+          {description && <p class="lead text-capitalize">{description}</p> }
+        </div>
       </header> 
       <main class="container" style="max-width: 1040px;">
         <slot/>

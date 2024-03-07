@@ -5,8 +5,9 @@ import TagCloud from "../../components/TagCloud.astro"
 import PageBrake from './../../components/PageBrake.astro'
 import TitlesList from './../../components/TitlesList.astro'
 const articles = await getCollection("wiki");
+const description = "Snippets, Configurations, Commands, Prompts, Hacks & Secrets"
 ---
-<PageLayout title="Snippets Wiki" desc="Browse a bunch of code snippets by tag.">
+<PageLayout title="🎱 Knowledge Base" {description}>
   <div class="container-small">
     <div class="mt-5"><TagCloud/></div>
     <PageBrake/>

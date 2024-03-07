@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<PageLayout title={entry.data.title} desc={entry.data.description}>
+<PageLayout title={entry.data.title} description={entry.data.description}>
   <div class="container-small">
     <!-- <div class="image"><img src={entry.data.heroImage}/></div> -->
     <PageBrake/>
