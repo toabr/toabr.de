@@ -150,6 +150,19 @@ body[open] #about {
 }
 
 /* ======================================
+ *   card styles
+ * =====================================*/
+
+[data-bs-theme="dark"] .card {
+  --bs-card-border-width: 1px;
+  --bs-card-border-color: var(--bs-primary);
+}
+
+[data-bs-theme="light"] .card {
+  --bs-card-border-width: 0px;
+}
+
+/* ======================================
  *   Styles Section 
  * =====================================*/
 
