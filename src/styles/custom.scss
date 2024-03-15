@@ -195,8 +195,10 @@ body[open] #about {
     content: "}";
   }
   &::before, &::after {
+    font-family: serif;
+    font-size: 3.125rem;
     font-weight: 400;
-    color: var(--bs-secondary);
+    color: var(--bs-border-color);
     padding: 0 1rem;
   }
 }
