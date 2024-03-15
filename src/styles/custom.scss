@@ -133,6 +133,10 @@ body[open] #about {
   }
 }
 
+[data-bs-theme="dark"] .btn-brand {
+  @extend .btn-outline-primary;
+}
+
 [data-bs-theme="light"] .btn-brand {
   @extend .btn-primary;
   --bs-btn-font-weight: 600;
@@ -144,6 +148,10 @@ body[open] #about {
   --bs-btn-hover-color: var(--bs-body-bg);
   --bs-btn-active-color: var(--bs-body-bg);
 }
+
+/* ======================================
+ *   Styles Section 
+ * =====================================*/
 
 .container-small {
   max-width: 685px;

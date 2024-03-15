@@ -1,6 +1,6 @@
 ---
 const { href, title, icon, class:className } = Astro.props
-const baseClass = 'brand-btn btn text-capitalizefont-monospace'
+const baseClass = 'btn btn-brand text-capitalizefont-monospace'
 ---
 
 <a href={href} class:list={[ className, baseClass ]}>
@@ -10,16 +10,17 @@ const baseClass = 'brand-btn btn text-capitalizefont-monospace'
       <use href={icon}></use>
     </svg>
   </span>}
-
-  {title}
+  <span>
+    {title}
+  </span>
 </a>
 <style>
 .svg-inline {
-    font-size: inherit;
-    height: 1.2em;
-    width: 1.2rem;
-    vertical-align: -.25em;
-    display: inline-block;
-    overflow: visible;
+  font-size: inherit;
+  height: 1.2em;
+  width: 1.2rem;
+  vertical-align: -.25em;
+  display: inline-block;
+  overflow: visible;
 }
 </style>

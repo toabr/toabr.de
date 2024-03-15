@@ -28,8 +28,8 @@ const { title, description, image } = Astro.props;
         </div>
         <Hero/>
         <nav class="btn-group mt-5 mb-4">
-          <HeaderLink href="/" class="btn btn-outline-primary">Home</HeaderLink>
-          <HeaderLink href="/wiki" class="btn btn-outline-primary">Wiki</HeaderLink>
+          <HeaderLink href="/" class="btn btn-brand"><span>Home</span></HeaderLink>
+          <HeaderLink href="/wiki" class="btn btn-brand"><span>Wiki</span></HeaderLink>
         </nav>
         <div class="text-center mt-3 undefined">
           {title && <h1>{title}</h1>}

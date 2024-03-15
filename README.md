@@ -3,7 +3,7 @@
 </div>
 
 ##### TODO:
-- highlight active btn in tagcloud
+- add brand button
 - change tags to topics?
 - change frontpage articles to list items
 - sort wiki tags
