@@ -3,10 +3,12 @@
 </div>
 
 ##### TODO:
-- add brand button
 - change tags to topics?
 - change frontpage articles to list items
 - sort wiki tags
-- sort blog entries
-- more blog entries
-- (searchbar)
+- content!!!
+    - sort blog entries
+    - more blog entries
+- 🚀🚀🚀 searchbar
+    - create a api endpoint for articels
+    - fetch all and search
