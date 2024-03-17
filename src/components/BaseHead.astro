@@ -16,6 +16,7 @@ const { title, description, image } = Astro.props;
 <link rel="apple-touch-icon" href="/logo192.png" />
 
 <meta name="theme-color" content="#20c997" />
+<meta name="color-scheme" content="dark light">
 <meta name="author" content="Torsten Abraham" />
 <meta name="keywords" content="webdevelopment, freelancer, frontend, berlin, drupal" />
 <meta name="generator" content={Astro.generator} />
@@ -34,9 +35,10 @@ const { title, description, image } = Astro.props;
 <meta name="description" content={description} />
 
 <!-- Open Graph Metadata -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="toabr.de">

@@ -3,12 +3,15 @@
 </div>
 
 ##### TODO:
-- change tags to topics?
-- change frontpage articles to list items
+- sitemap
+- optimize for web reader view
+  - better titles
+  - no delimiters in the titles???
 - sort wiki tags
 - content!!!
     - sort blog entries
     - more blog entries
 - 🚀🚀🚀 searchbar
-    - create a api endpoint for articels
+    - create a api endpoint for articles
     - fetch all and search
+    - or astro db ...
