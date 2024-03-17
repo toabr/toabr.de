@@ -1,22 +1,9 @@
 ---
 const { articles } = Astro.props
+const className = 'fat-underline text-body fs-5 fw-black'
 ---
 <ul>
-  {articles.map(entry => <li><a href={`/wiki/${entry.slug}/`}>{entry.data.title}</a></li>)}
+  {articles.map(entry => <li class="mb-1">
+    <a class={className} href={`/wiki/${entry.slug}/`}>{entry.data.title}</a>
+  </li>)}
 </ul>
-<style>
-  li {
-    margin-bottom: 0.185rem;
-    a {
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: var(--bs-body-color);
-      text-decoration-line: underline;
-      text-decoration-color: var(--bs-primary);
-      text-decoration-thickness: 0.185rem;
-      &:hover {
-        text-decoration-color: var(--bs-code-color);
-      }
-    }
-  }
-</style>

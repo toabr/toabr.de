@@ -19,13 +19,11 @@ const { Content } = await entry.render();
 <PageLayout title={entry.data.title}>
   <div class="container-small">
     <PageBrake/>
-    <div class="date text-center text-muted my-3">
-      <time>{entry.data.changed.toString().slice(0,15)}</time>
-    </div>
     <article id="Post">
-      <div class="body">
-        <Content />
-      </div>
+      <header class="text-center text-muted my-3">
+        <time>{entry.data.changed.toString().slice(0,15)}</time>
+      </header>
+      <Content />
       <footer class="footer mt-5">
         {entry.data.tags && 
           entry.data.tags.map(tag => <BrandBtn href={`/tags/${tag}`} title={`#${tag}`} variant="sm m-1" />)
